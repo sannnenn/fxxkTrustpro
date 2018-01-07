@@ -1,0 +1,73 @@
+[Settings]
+#ŠJn“ú
+startDate = 2018/01/08
+
+#Œ—j“ú
+[0]
+#•”–å–¼(Index)
+departmentNameNumber = 71320
+#PJ–¼
+projectNameNumber = 1005314
+#H’ö
+process = IT
+#‹Î–±ŠÔ
+hour = 7
+min = 5
+#”õl
+remarks = Ita
+
+#‰Î—j“ú
+[1]
+#•”–å–¼(Index)
+departmentNameNumber = 71320
+#PJ–¼
+projectNameNumber = 1005314
+#H’ö
+process = IT
+#‹Î–±ŠÔ
+hour = 7
+min = 5
+#”õl
+remarks = Ita
+
+#…—j“ú
+[2]
+#•”–å–¼(Index)
+departmentNameNumber = 71320
+#PJ–¼
+projectNameNumber = 1005314
+#H’ö
+process = IT
+#‹Î–±ŠÔ
+hour = 7
+min = 5
+#”õl
+remarks = Ita
+
+#–Ø—j“ú
+[3]
+#•”–å–¼(Index)
+departmentNameNumber = 71320
+#PJ–¼
+projectNameNumber = 1005314
+#H’ö
+process = IT
+#‹Î–±ŠÔ
+hour = 7
+min = 5
+#”õl
+remarks = Ita
+
+#‹à—j“ú
+[4]
+#•”–å–¼(Index)
+departmentNameNumber = 71320
+#PJ–¼
+projectNameNumber = 1005314
+#H’ö
+process = IT
+#‹Î–±ŠÔ
+hour = 7
+min = 5
+#”õl
+remarks = Ita
