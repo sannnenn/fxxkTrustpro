@@ -1,9 +1,11 @@
 [Settings]
 #ŠJn“ú
-startDate = 2018/01/08
+startDate = 2018/01/15
 
 #Œ—j“ú
 [0]
+#‹x“úƒtƒ‰ƒO
+isHoliday = 0
 #•”–å–¼(Index)
 departmentNameNumber = 71320
 #PJ–¼
@@ -18,6 +20,8 @@ remarks = Ita
 
 #‰Î—j“ú
 [1]
+#‹x“úƒtƒ‰ƒO
+isHoliday = 0
 #•”–å–¼(Index)
 departmentNameNumber = 71320
 #PJ–¼
@@ -32,6 +36,8 @@ remarks = Ita
 
 #…—j“ú
 [2]
+#‹x“úƒtƒ‰ƒO
+isHoliday = 0
 #•”–å–¼(Index)
 departmentNameNumber = 71320
 #PJ–¼
@@ -46,6 +52,8 @@ remarks = Ita
 
 #–Ø—j“ú
 [3]
+#‹x“úƒtƒ‰ƒO
+isHoliday = 0
 #•”–å–¼(Index)
 departmentNameNumber = 71320
 #PJ–¼
@@ -60,6 +68,8 @@ remarks = Ita
 
 #‹à—j“ú
 [4]
+#‹x“úƒtƒ‰ƒO
+isHoliday = 0
 #•”–å–¼(Index)
 departmentNameNumber = 71320
 #PJ–¼

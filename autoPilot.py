@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.alert import Alert
 
 class autoPilot:
     #ドライバー
@@ -84,11 +85,9 @@ class autoPilot:
         weeklyReportFile = SafeConfigParser()
         weeklyReportFile.read("./weeklyReport.txt")
         
-        for i in range(7):
-            
+        for i in range(5):
             #休日の場合は処理はしない(曜日のところが赤くなってる)
-            if self._driver.find_element_by_id(
-                "nippou_keikaku_view_youbi" + str(i) + "_VIEW_LABEL").get_attribute("style") != "":
+            if weeklyReportFile.get(str(i), "isHoliday") == "1" or self._driver.find_element_by_id("nippou_keikaku_view_youbi" + str(i) + "_VIEW_LABEL").get_attribute("style").strip() != "":
                 continue
 
             #週計画取得
@@ -100,32 +99,46 @@ class autoPilot:
             remarks = weeklyReportFile.get(str(i), "remarks")
 
             #曜日ごとの計画に移動
-            self._driver.find_element_by_id(
-                "nippou_keikaku_view_kinmu_date" + str(i) + "_VIEW_LABEL").click()
+            self._wait.until(expected_conditions.element_to_be_clickable((By.ID, "nippou_keikaku_view_kinmu_date" + str(i) + "_VIEW_LABEL")))
+            self._driver.find_element_by_id("nippou_keikaku_view_kinmu_date" + str(i) + "_VIEW_LABEL").click()
 
             #勤務計画保存ボタンが表示されるまで待つ
-            #self._wait.until(expected_conditions.element_to_be_clickable((By.CLASS_NAME, "btn_size_05 marginleft10")))
             sleep(5)
-            print("表示できる")
-            #追加ボタン押下
-            while !self._wait.until(expected_conditions.element_to_be_clickable(By.CLASS_NAME, "btn_size_05 marginleft10")):
-                self._driver.find_element_by_class_name("btn_size_05")
 
+            #追加ボタン押下
+            self._wait.until(expected_conditions.element_to_be_clickable((By.ID, "addLineBtn")))
+            self._driver.find_element_by_id("addLineBtn").click()
+
+            sleep(4)
+            self._wait.until(expected_conditions.element_to_be_selected)
             departmentSelect = Select(self._driver.find_element_by_id("sagyou_keikaku_view_bumon_name_view0"))
             departmentSelect.select_by_value(department)
+            sleep(1)
+
             projectSelect = Select(self._driver.find_element_by_id("sagyou_keikaku_view_project_name_view0"))
             projectSelect.select_by_value(project)
+            sleep(1)
+
             processSelect = Select(self._driver.find_element_by_id("sagyou_keikaku_view_pj_koutei_view0"))
             processSelect.select_by_value(process)
+            sleep(1)
+
             hourSelect = Select(self._driver.find_element_by_id("sagyou_keikaku_view_sagyou_time_hour_view0"))
             hourSelect.select_by_value(hour)
             minSelect = Select(self._driver.find_element_by_id("sagyou_keikaku_view_sagyou_time_min_view0"))
             minSelect.select_by_value(min)
-            remarksSelect = Select(self._driver.find_element_by_id())
+            sleep(2)
+
+            self._driver.find_element_by_id("sagyou_keikaku_view_text_bikou0").send_keys(remarks)
 
             #計画保存
-            self._driver.find_element_by_class_name("btn_size_05 marginleft10")
+            self._driver.find_element_by_xpath("/html/body/div/div/div[4]/div/div[1]/div[4]/div[1]/div/div/div[1]/div[3]/form/div[1]/div[2]/div[2]/input").click()
+            Alert(self._driver).accept()
+            sleep(8)
 
+        #申請
+        self._driver.find_element_by_xpath("/html/body/div/div/div[4]/div/div[1]/div[3]/form/div[1]/div[2]/div[2]/input").click()
+        sleep(3)
 
 
 
