@@ -138,6 +138,7 @@ class autoPilot:
 
         #申請
         self._driver.find_element_by_xpath("/html/body/div/div/div[4]/div/div[1]/div[3]/form/div[1]/div[2]/div[2]/input").click()
+        Alert(self._driver).accept()
         sleep(3)
 
 
